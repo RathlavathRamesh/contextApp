@@ -1,0 +1,21 @@
+/* Write your CSS here */
+.firstCard {
+  height: 24vh;
+  background-color: #475569;
+  padding: 10px;
+}
+* {
+  margin: 0px;
+}
+.heading {
+  color: #ffffff;
+  margin-left: 8vh;
+}
+.item {
+  margin-left: 2vh;
+  display: flex;
+}
+.lableEmenet {
+  margin-left: 1vh;
+  color: #ffffff;
+}

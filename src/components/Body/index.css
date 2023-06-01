@@ -1,0 +1,56 @@
+/* Write your CSS here */
+.BodySection {
+  display: flex;
+  flex-direction: row;
+}
+.leftMenu {
+  height: 50vh;
+  background-color: #cbd5e1;
+  padding: 10px;
+}
+.navheading {
+  font-size: 17px;
+  margin-left: 15px;
+  color: #64748b;
+}
+.navheading1 {
+  font-size: 21px;
+  margin-left: 2vh;
+  color: #64748b;
+}
+.listOfitems {
+  padding: 10px;
+  margin-left: 2vh;
+  list-style-type: none;
+  color: #64748b;
+  font-size: 20px;
+  font-weight: 500;
+}
+.content {
+  margin-left: 1vh;
+  height: 50vh;
+  background-color: #f1f5f9;
+}
+.paragraph {
+  color: #64748b;
+}
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  width: 8vw;
+  margin-top: 7vh;
+  margin-left: 7vh;
+  border: solid #475569 1px;
+}
+.block2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  width: 8vw;
+  margin-top: 1vh;
+  margin-left: 7vh;
+  border: solid #475569 1px;
+}
