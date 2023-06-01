@@ -1,6 +1,8 @@
 // Write your code here
 import './index.css'
 import {Component} from 'react'
+import Layout from '../Layout'
+import ConfigurationContext from '../../context/ConfigurationContext'
 
 class ConfigurationController extends Component {
   state = {showContent: true, showLeftNavbar: true, showRightNavbar: true}
@@ -23,45 +25,57 @@ class ConfigurationController extends Component {
   render() {
     const {showContent, showLeftNavbar, showRightNavbar} = this.state
     return (
-      <div className="firstCard">
-        <h1 className="heading">Layout</h1>
-        <div className="item">
-          <input
-            type="checkbox"
-            id="firstbox"
-            onChange={this.onToggleShowLeftNavbar}
-            defaultChecked={showLeftNavbar}
-            value={showLeftNavbar}
-          />
-          <label htmlFor="firstbox" className="lableEmenet">
-            left navbar
-          </label>
+      <ConfigurationContext.Provider
+        value={{
+          showContent,
+          showLeftNavbar,
+          showRightNavbar,
+          onToggleShowContent: this.onToggleShowContent,
+          onToggleShowLeftNavbar: this.onToggleShowLeftNavbar,
+          onToggleShowRightNavbar: this.onToggleShowRightNavbar,
+        }}
+      >
+        <div className="firstCard">
+          <h1 className="heading">Layout</h1>
+          <div className="item">
+            <input
+              type="checkbox"
+              id="firstbox"
+              onChange={this.onToggleShowLeftNavbar}
+              defaultChecked={showLeftNavbar}
+              value={showLeftNavbar}
+            />
+            <label htmlFor="firstbox" className="lableEmenet">
+              left navbar
+            </label>
+          </div>
+          <div className="item">
+            <input
+              type="checkbox"
+              id="secondbox"
+              onChange={this.onToggleShowContent}
+              defaultChecked={showContent}
+              value={showContent}
+            />
+            <label htmlFor="secondbox" className="lableEmenet">
+              content
+            </label>
+          </div>
+          <div className="item">
+            <input
+              type="checkbox"
+              id="checkox1"
+              onChange={this.onToggleShowRightNavbar}
+              defaultChecked={showRightNavbar}
+              value={showRightNavbar}
+            />
+            <label htmlFor="checkox1" className="lableEmenet">
+              Right Navbar
+            </label>
+          </div>
         </div>
-        <div className="item">
-          <input
-            type="checkbox"
-            id="secondbox"
-            onChange={this.onToggleShowContent}
-            defaultChecked={showContent}
-            value={showContent}
-          />
-          <label htmlFor="secondbox" className="lableEmenet">
-            content
-          </label>
-        </div>
-        <div className="item">
-          <input
-            type="checkbox"
-            id="checkox1"
-            onChange={this.onToggleShowRightNavbar}
-            defaultChecked={showRightNavbar}
-            value={showRightNavbar}
-          />
-          <label htmlFor="checkox1" className="lableEmenet">
-            Right Navbar
-          </label>
-        </div>
-      </div>
+        <Layout />
+      </ConfigurationContext.Provider>
     )
   }
 }
